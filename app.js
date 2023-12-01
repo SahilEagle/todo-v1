@@ -15,7 +15,7 @@ app.use(express.static("public"))
 
 app.set('view engine', 'ejs');
 
-app.get("https://persian-blue-kitten-wear.cyclic.app/", function (req, res) {
+app.get("/", function (req, res) {
 
     let day = date.getDate();
 
@@ -23,7 +23,7 @@ app.get("https://persian-blue-kitten-wear.cyclic.app/", function (req, res) {
 
 });
 
-app.post("https://persian-blue-kitten-wear.cyclic.app/", (req, res) => {
+app.post("/", (req, res) => {
 
     let item = req.body.newItem;
 
@@ -32,7 +32,7 @@ app.post("https://persian-blue-kitten-wear.cyclic.app/", (req, res) => {
         res.redirect("https://persian-blue-kitten-wear.cyclic.app/work")
     } else {
         items.push(item)
-        res.redirect("https://persian-blue-kitten-wear.cyclic.app/");
+        res.redirect("/");
 
     }
 
