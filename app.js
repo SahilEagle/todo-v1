@@ -38,7 +38,7 @@ app.post("/", (req, res) => {
 
 })
 
-app.get("https://persian-blue-kitten-wear.cyclic.app/work", function (req, res) {
+app.get("/work", function (req, res) {
     res.render("list", { listTitle: "Work List", newListItem: workItems });
 });
 
