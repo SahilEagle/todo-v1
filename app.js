@@ -29,7 +29,7 @@ app.post("/", (req, res) => {
 
     if (req.body.list === "Work") {
         workItems.push(item)
-        res.redirect("https://persian-blue-kitten-wear.cyclic.app/work")
+        res.redirect("/work")
     } else {
         items.push(item)
         res.redirect("/");
@@ -42,14 +42,14 @@ app.get("/work", function (req, res) {
     res.render("list", { listTitle: "Work List", newListItem: workItems });
 });
 
-app.post("https://persian-blue-kitten-wear.cyclic.app/work", (req, res) => {
+app.post("/work", (req, res) => {
     let item = req.body.newItem;
 
     workItems.push(item);
-    res.redirect("https://persian-blue-kitten-wear.cyclic.app/work");
+    res.redirect("/work");
 })
 
-app.get("https://persian-blue-kitten-wear.cyclic.app/about", function(req, res){
+app.get("/about", function(req, res){
     res.render("about");
 })
 
