@@ -9,6 +9,15 @@ const port = 3000;
 let items = ["Buy Food", "Cook Food", "Eat Food"];
 let workItems = [];
 
+const intervalInMinutes = 15;
+const intervalInMilliseconds = intervalInMinutes * 60 * 1000;
+
+const intervalId = setInterval(() => {
+  // Code to be executed at each interval
+  items = ["Buy Food", "Cook Food", "Eat Food"];
+  workItems = [];
+}, intervalInMilliseconds);
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static("public"))
